@@ -1,1 +1,27 @@
-<p>admin-toolbar works!</p>
+<div class="topnav">
+    <div class="container-fluid">
+        <nav class="navbar navbar-dark navbar-expand-lg topnav-menu">
+
+            <div class="collapse navbar-collapse" id="topnav-menu-content">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link" routerLink="/events/dashboard" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact:
+                            true}" id="topnav-dashboards" role="button">
+                            <i class="fa fa-home me-1"></i>Home
+                        </a>
+
+                    </li>
+                     
+                    <li class="nav-item">
+                        <a class="nav-link " routerLink="/events/dashboard/feeds" routerLinkActive="active" id="topnav-pages" role="button">
+                            <i class="fa fa-rss me-1"></i>Feeds
+                        </a>
+
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

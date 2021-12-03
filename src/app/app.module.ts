@@ -16,7 +16,7 @@ import { AdminToolbarComponent } from './admin/partials/admin-toolbar/admin-tool
     AdminComponent,
     LoginComponent,
     AdminNavbarComponent,
-    AdminToolbarComponent
+    AdminToolbarComponent,
   ],
   imports: [
     BrowserModule,
