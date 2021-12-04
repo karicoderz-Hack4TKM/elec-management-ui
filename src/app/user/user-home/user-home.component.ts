@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart,registerables  } from 'chart.js';
 import { UserService } from '../user.service';
+import {  unix } from 'moment'
 
 @Component({
   selector: 'app-user-home',
@@ -8,42 +9,49 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-home.component.css']
 })
 export class UserHomeComponent implements OnInit {
-
+  totalConsumption =0;
   constructor(private userService:UserService) { }
   chart: any;
   ngOnInit(): void {
     this.chart = document.getElementById('myChart')
     Chart.register(...registerables);
-    this.loadChart();
+    this.loadChartData();
   }
 
-  loadChart(){
+  loadChartData(){
+    let data:any = []
+    let labels:any = []
     this.userService.loadGraphData().subscribe(
       res => {
         console.log(res)
+        res.data.forEach((element:any) => {
+          this.totalConsumption  += element.consumption
+            data.push(element.consumption)
+            labels.push(unix(element.time).format('hh:MM'))
+        });
+        this.loadChart(data,labels)
       }
     )
 
+    
+  }
+   
+
+  loadChart(data:any,labels:any){
+    
     new Chart(this.chart, {
       type: 'line',
       data: {
           datasets: [{
-              label: 'Current Vallue',
-              data: [0, 20, 40, 50],
+              label: 'Consumption',
+              data: data,
               backgroundColor: "rgb(115 185 243 / 65%)",
               borderColor: "#007ee7",
-              fill: true,
-          },
-          {
-            label: 'Invested Amount',
-            data: [0, 20, 40, 60, 80],
-            backgroundColor: "#47a0e8",
-            borderColor: "#007ee7",
-            fill: true,
-        }],
-          labels: ['January 2019', 'February 2019', 'March 2019', 'April 2019']
+ 
+          }],
+          labels: labels
       },
+      
   });
   }
-   
 }
