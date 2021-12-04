@@ -17,6 +17,8 @@ import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.co
 import { InternalServerErrorComponent } from './errors/internal-server-error/internal-server-error.component';
 import { UnauthorizedComponent } from './errors/unauthorized/unauthorized.component';
 import { AdminSlabsComponent } from './admin/main/admin-slabs/admin-slabs.component';
+import { AdminNotificationComponent } from './admin/main/admin-notification/admin-notification.component';
+import { AdminSubstationComponent } from './admin/main/admin-substation/admin-substation.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { AdminSlabsComponent } from './admin/main/admin-slabs/admin-slabs.compon
     InternalServerErrorComponent,
     UnauthorizedComponent,
     AdminSlabsComponent,
+    AdminNotificationComponent,
+    AdminSubstationComponent,
   ],
   imports: [
     BrowserModule,

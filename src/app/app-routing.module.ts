@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { AdminSlabsComponent } from './admin/main/admin-slabs/admin-slabs.component';
+import { AdminSubstationComponent } from './admin/main/admin-substation/admin-substation.component';
 import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
 import { InternalServerErrorComponent } from './errors/internal-server-error/internal-server-error.component';
@@ -16,6 +17,9 @@ const routes: Routes = [
     children:[
      {
        path:'slabs',component:AdminSlabsComponent
+     },
+     {
+       path:'substation',component:AdminSubstationComponent
      }
     ]
   },
