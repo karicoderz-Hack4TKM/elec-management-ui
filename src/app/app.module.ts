@@ -8,8 +8,6 @@ import { InterceptorService } from './utilities/interceptor/interceptor.service'
 import { AdminComponent } from './admin/admin.component';
 import { AdminNavbarComponent } from './admin/partials/admin-navbar/admin-navbar.component';
 import { AdminToolbarComponent } from './admin/partials/admin-toolbar/admin-toolbar.component';
-import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
-import { UserLoginComponent } from './auth/user-login/user-login.component';
 import { FormsModule } from '@angular/forms';
 import { AdminHomeComponent } from './admin/main/admin-home/admin-home.component';
 import { UserComponent } from './user/user.component';
@@ -19,6 +17,7 @@ import { UnauthorizedComponent } from './errors/unauthorized/unauthorized.compon
 import { AdminSlabsComponent } from './admin/main/admin-slabs/admin-slabs.component';
 import { AdminNotificationComponent } from './admin/main/admin-notification/admin-notification.component';
 import { AdminSubstationComponent } from './admin/main/admin-substation/admin-substation.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +25,6 @@ import { AdminSubstationComponent } from './admin/main/admin-substation/admin-su
     AdminComponent,
     AdminNavbarComponent,
     AdminToolbarComponent,
-    AdminLoginComponent,
-    UserLoginComponent,
     AdminHomeComponent,
     UserComponent,
     PageNotFoundComponent,
@@ -36,6 +33,7 @@ import { AdminSubstationComponent } from './admin/main/admin-substation/admin-su
     AdminSlabsComponent,
     AdminNotificationComponent,
     AdminSubstationComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

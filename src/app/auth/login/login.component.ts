@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-admin-login',
-  templateUrl: './admin-login.component.html',
-  styleUrls: ['./admin-login.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class AdminLoginComponent implements OnInit {
+export class LoginComponent implements OnInit {
   public loading =false;
   constructor() { }
 
@@ -17,7 +17,7 @@ export class AdminLoginComponent implements OnInit {
     let data = {
       email:form.value.email.trim(),
       password:form.value.password.trim()
-    } 
+    }
     
   }
 
