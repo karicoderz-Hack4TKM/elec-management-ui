@@ -35,8 +35,16 @@ export class AdminSlabsComponent implements OnInit {
     }
     this.adminService.createTariff(data).subscribe(
       res => {
+        this.loadTariff()
         this.success = true;
         this.message = 'Tariff added successfully'
+      }
+    )
+  }
+  deleteTariff(id:any){
+    this.adminService.deleteTariff(id).subscribe(
+      res => {
+        this.loadTariff();
       }
     )
   }

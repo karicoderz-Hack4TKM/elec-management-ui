@@ -64,7 +64,7 @@
                         <td>{{ tariff.threshold }}</td>
                         <td><span class="badge bg-primary"><i class="fa fa-inr"></i> {{ tariff.price }}</span></td>
                         <td>
-                            <button type="button" class="btn btn-danger m-1"><i class="fa fa-trash"></i> </button>
+                            <button type="button" class="btn btn-danger m-1"  (click)="deleteTariff(tariff.type)"><i class="fa fa-trash"></i> </button>
                         </td>
                     </tr>
 

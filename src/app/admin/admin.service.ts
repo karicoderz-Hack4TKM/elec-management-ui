@@ -16,4 +16,8 @@ export class AdminService {
   createTariff(data:Object){
     return this.http.post<any>(environment.API+'core/tariff',data)
   }
+
+  deleteTariff(id:any){
+    return this.http.delete<any>(environment.API+'/core/tariff?filter={"type":"'+id+'"}')
+  }
 }
