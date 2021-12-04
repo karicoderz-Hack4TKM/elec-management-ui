@@ -1,41 +1,42 @@
-
 <div class="row">
     <div class="col-12">
         <div class="page-title-box">
             <div class="page-title-right">
-                <button class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#slab-modal"> <i class="fa fa-plus-circle"></i> Create Slab </button>
+                <button class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#slab-modal"> <i
+                        class="fa fa-plus-circle"></i> Create Slab </button>
                 <div id="slab-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                
+
                             <div class="modal-body">
                                 <div class="text-center mt-2 mb-4 h4">
-                                    Create 
+                                    Create
                                 </div>
-                
-                                <form class="ps-3 pe-3" action="#">
-                
+
+                                <form class="ps-3 pe-3" #slabForm="ngForm" (ngSubmit)="addTariff(slabForm)"> 
+
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Name</label>
-                                        <input class="form-control" type="email" id="username" required="" placeholder="Michael Zenaty">
+                                        <select class="form-select" id="example-select" ngModel #type="ngModel" name="type">
+                                            <option value="households">HouseHolds</option>
+                                            <option value="educational">Educational</option>
+                                            <option value="commercial">Commercial</option>
+                                        </select>
                                     </div>
-                
                                     <div class="mb-3">
-                                        <label for="emailaddress" class="form-label">Email address</label>
-                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="john@deo.com">
+                                        <label for="Threshold" class="form-label">Threshold</label>
+                                        <input class="form-control" type="number" required="" id="Threshold" ngModel #threshold="ngModel" name="threshold">
                                     </div>
-                
                                     <div class="mb-3">
-                                        <label for="password" class="form-label">Password</label>
-                                        <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                        <label for="Price" class="form-label">Price</label>
+                                        <input class="form-control" type="number" required="" id="Price" ngModel #price="ngModel" name="price">
                                     </div>
-                
                                     <div class="mb-3 text-center">
                                         <button class="btn btn-primary" type="submit">Create</button>
                                     </div>
-                
+
                                 </form>
-                
+
                             </div>
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
@@ -46,9 +47,9 @@
     </div>
 </div>
 <div class="row mt-2">
-    <div class="card">
+    <div class="card" *ngIf="loading">
         <div class="card-body">
-            <table class="table table-sm table-centered mb-0">
+            <table class="table table-sm table-centered mb-0" >
                 <thead>
                     <tr>
                         <th>Type</th>
@@ -58,18 +59,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Commercial</td>
-                        <td>upto 20</td>
-                        <td><span class="badge bg-primary"><i class="fa fa-inr"></i> 82</span></td>
+                    <tr *ngFor="let tariff of tariffs">
+                        <td>{{ tariff.type }}</td>
+                        <td>{{ tariff.threshold }}</td>
+                        <td><span class="badge bg-primary"><i class="fa fa-inr"></i> {{ tariff.price }}</span></td>
                         <td>
-                            <button type="button" class="btn btn-info m-1"><i class="fa fa-pencil"></i> </button>
                             <button type="button" class="btn btn-danger m-1"><i class="fa fa-trash"></i> </button>
                         </td>
                     </tr>
-                     
+
                 </tbody>
             </table>
         </div>
     </div>
+</div>
+<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert" *ngIf="success">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ {{ message }}
 </div>
