@@ -9,6 +9,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { ProviderLoginComponent } from './auth/provider-login/provider-login.component';
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 import { UserHomeComponent } from './user/user-home/user-home.component';
+import { UserRequestFormComponent } from './user/user-request-form/user-request-form.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
@@ -36,6 +37,9 @@ const routes: Routes = [
     children:[
       {
         path:'',component:UserHomeComponent
+      },
+      {
+        path:'request',component:UserRequestFormComponent
       }
     ]
   },

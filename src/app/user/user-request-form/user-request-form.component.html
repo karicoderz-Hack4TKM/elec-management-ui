@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Request Form</h4>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10 m-auto">
+        
+        <div class="card">
+            <div class="card-body">
+                <form #requestForm="ngForm" (ngSubmit)="request(requestForm)">
+                    <div class="row">
+            
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="simpleinput" class="form-label">Type</label>
+                                <select class="form-select" id="example-select" required name="type" ngModel #type="ngModel">
+                                    <option value="permanent">Permanent</option>
+                                    <option value="temporary">Temporary</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="simpleinput" class="form-label">Reason</label>
+                                <textarea class="form-control" id="example-textarea" rows="5" required name="reason" #reason="ngModel" ngModel></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="example-palaceholder" class="form-label">Starting Date</label>
+                                <input type="date" id="example-palaceholder" class="form-control" required name="startDate" #startDate="ngModel" ngModel>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="example-palaceholder" class="form-label">Starting Time</label>
+                                <input type="time" id="example-palaceholder" class="form-control" required name="startTime" #startTime="ngModel" ngModel>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="example-palaceholder" class="form-label">Ending Date</label>
+                                <input type="date" id="example-palaceholder" class="form-control" required name="endDate" #endDate="ngModel" ngModel>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="example-palaceholder" class="form-label">Ending Time</label>
+                                <input type="time" id="example-palaceholder"  class="form-control" required name="endTime" #endTime="ngModel" ngModel>
+                            </div>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button class="btn btn-primary" type="submit" [disabled]="!requestForm.valid">Request</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
