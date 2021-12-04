@@ -13,6 +13,10 @@ import { UserLoginComponent } from './auth/user-login/user-login.component';
 import { FormsModule } from '@angular/forms';
 import { AdminHomeComponent } from './admin/main/admin-home/admin-home.component';
 import { UserComponent } from './user/user.component';
+import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
+import { InternalServerErrorComponent } from './errors/internal-server-error/internal-server-error.component';
+import { UnauthorizedComponent } from './errors/unauthorized/unauthorized.component';
+import { AdminSlabsComponent } from './admin/main/admin-slabs/admin-slabs.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,10 @@ import { UserComponent } from './user/user.component';
     UserLoginComponent,
     AdminHomeComponent,
     UserComponent,
+    PageNotFoundComponent,
+    InternalServerErrorComponent,
+    UnauthorizedComponent,
+    AdminSlabsComponent,
   ],
   imports: [
     BrowserModule,

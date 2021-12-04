@@ -1,0 +1,75 @@
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <button class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#slab-modal"> <i class="fa fa-plus-circle"></i> Create Slab </button>
+                <div id="slab-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                
+                            <div class="modal-body">
+                                <div class="text-center mt-2 mb-4 h4">
+                                    Create 
+                                </div>
+                
+                                <form class="ps-3 pe-3" action="#">
+                
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">Name</label>
+                                        <input class="form-control" type="email" id="username" required="" placeholder="Michael Zenaty">
+                                    </div>
+                
+                                    <div class="mb-3">
+                                        <label for="emailaddress" class="form-label">Email address</label>
+                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="john@deo.com">
+                                    </div>
+                
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                    </div>
+                
+                                    <div class="mb-3 text-center">
+                                        <button class="btn btn-primary" type="submit">Create</button>
+                                    </div>
+                
+                                </form>
+                
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+            </div>
+            <h4 class="page-title">Slab Details</h4>
+        </div>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-sm table-centered mb-0">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Limit</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Commercial</td>
+                        <td>upto 20</td>
+                        <td><span class="badge bg-primary"><i class="fa fa-inr"></i> 82</span></td>
+                        <td>
+                            <button type="button" class="btn btn-info m-1"><i class="fa fa-pencil"></i> </button>
+                            <button type="button" class="btn btn-danger m-1"><i class="fa fa-trash"></i> </button>
+                        </td>
+                    </tr>
+                     
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

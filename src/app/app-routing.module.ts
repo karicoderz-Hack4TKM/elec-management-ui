@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { AdminSlabsComponent } from './admin/main/admin-slabs/admin-slabs.component';
 import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
+import { InternalServerErrorComponent } from './errors/internal-server-error/internal-server-error.component';
+import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
+import { UnauthorizedComponent } from './errors/unauthorized/unauthorized.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
@@ -10,7 +14,9 @@ const routes: Routes = [
   {
     path:'admin',component:AdminComponent,
     children:[
-     
+     {
+       path:'slabs',component:AdminSlabsComponent
+     }
     ]
   },
   //user routes
@@ -28,6 +34,12 @@ const routes: Routes = [
   {
     path:'login',component:UserLoginComponent
   },
+  
+  //page not found
+  {
+    path:'**',component:PageNotFoundComponent
+  }
+  
 ];
 
 @NgModule({
