@@ -1,1 +1,69 @@
-<p>admin-notification works!</p>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <button class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#notification-modal"> <i class="fa fa-plus-circle"></i> Send Notification </button>
+                <div id="notification-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                
+                            <div class="modal-body">
+                                <div class="text-center mt-2 mb-4 h4">
+                                    Send Notification 
+                                </div>
+                
+                                <form class="ps-3 pe-3" action="#">
+                
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label">Subject</label>
+                                        <input class="form-control" type="text" id="subject" required="" placeholder="Subject">
+                                    </div>
+                
+                                    <div class="mb-3">
+                                        <label for="content" class="form-label">Message</label>
+                                        <textarea class="form-control" type="text" id="content" required="" rows="8">
+                                            </textarea>
+                                    </div>
+                
+                                    
+                
+                                    <div class="mb-3 text-center">
+                                        <button class="btn btn-primary" type="submit"><i class="fa fa-envelope"></i> Send</button>
+                                    </div>
+                
+                                </form>
+                
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+            </div>
+            <h4 class="page-title">Notifications</h4>
+        </div>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-sm table-centered mb-0">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Subject</th>
+                        <th>Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12/7/2021</td>
+                        <td>Sample</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi delectus aperiam, nam libero cupiditate earum magnam voluptatum, illo corrupti, nulla amet est. Vitae reiciendis libero eligendi sed dignissimos harum deleniti.</td>
+                    </tr>
+                     
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

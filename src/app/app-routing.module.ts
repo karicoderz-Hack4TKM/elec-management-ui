@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { AdminNotificationComponent } from './admin/main/admin-notification/admin-notification.component';
 import { AdminSlabsComponent } from './admin/main/admin-slabs/admin-slabs.component';
 import { AdminSubstationComponent } from './admin/main/admin-substation/admin-substation.component';
 import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
@@ -20,6 +21,9 @@ const routes: Routes = [
      },
      {
        path:'substation',component:AdminSubstationComponent
+     },
+     {
+       path:'notification',component:AdminNotificationComponent
      }
     ]
   },
