@@ -1,6 +1,11 @@
 <div class="navbar-custom topnav-navbar">
     <div class="container-fluid">
         <ul class="list-unstyled topbar-menu float-end mb-0">
+            <li class="notification-list mt-2">
+                <a class="nav-link" routerLink="/events/dashboard/create-event">
+                    <button class="btn btn-info rounded-pill"><i class="fa fa-file-text mx-1"></i> Request</button>
+                </a>
+            </li>
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" id="topbar-userdrop" href="#" role="button" aria-haspopup="true"
                     aria-expanded="false">
@@ -9,7 +14,7 @@
                     </span>
                     <span>
                         <span class="account-user-name">Username</span>
-                        <span class="account-position">Admin</span>
+                        <span class="account-position">Consumer</span>
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown" aria-labelledby="topbar-userdrop">
@@ -40,12 +45,6 @@
             </li>
 
         </ul>
-        <a class="navbar-toggle"  data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
-            <div class="lines">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </a>
+        
     </div>
 </div>

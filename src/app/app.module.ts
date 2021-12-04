@@ -18,6 +18,9 @@ import { AdminSlabsComponent } from './admin/main/admin-slabs/admin-slabs.compon
 import { AdminNotificationComponent } from './admin/main/admin-notification/admin-notification.component';
 import { AdminSubstationComponent } from './admin/main/admin-substation/admin-substation.component';
 import { LoginComponent } from './auth/login/login.component';
+import { SubstationComponent } from './substation/substation.component';
+import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
+import { UserHomeComponent } from './user/user-home/user-home.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +37,15 @@ import { LoginComponent } from './auth/login/login.component';
     AdminNotificationComponent,
     AdminSubstationComponent,
     LoginComponent,
+    SubstationComponent,
+    UserNavbarComponent,
+    UserHomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     {
