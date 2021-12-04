@@ -9,7 +9,6 @@ import { AdminService } from '../../admin.service';
 })
 export class AdminSlabsComponent implements OnInit {
   tariffs:any = []
-  loading = true;
   success = false;
   message = 'Success'
   constructor(private adminService:AdminService) { }
@@ -21,7 +20,7 @@ export class AdminSlabsComponent implements OnInit {
   loadTariff(){
     this.adminService.getTariff().subscribe(
       res => {
-        this.loading = false
+      
         console.log(res)
         this.tariffs = res.data
       }
