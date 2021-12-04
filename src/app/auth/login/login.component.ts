@@ -11,15 +11,8 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
   public loading = false;
   public error: boolean = false
-  admin = {
-    email:"elec@gmail.com",
-    password:'password'
-  }
-  substation = {
-    email:"SUB001@gmail.com",
-    password:'password'
-  }
-  constructor(private authService: AuthService,private router:Router) { }
+  
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,28 +22,23 @@ export class LoginComponent implements OnInit {
       email: form.value.email.trim(),
       password: form.value.password.trim()
     }
-    if(data.email == this.admin.email && data.password == this.admin.password){
-      this.router.navigate(['/admin']);
-    }else if (data.email == this.substation.email && data.password == this.substation.password){
-      this.router.navigate(['/substation']);
-    }else{
-      this.authService.getUser(data).subscribe(
-        res => {
-          console.log(res)
-          if (res.code == 200) {
-            localStorage.setItem('token',res.data.token)
-              this.router.navigate(['/user']);
-              this.loading = false
-          }else{
-            this.error = true
-            this.loading = false
-            form.resetForm()
-          }
-        }
-      )
-    }
 
-    
+    this.authService.getUser(data).subscribe(
+      res => {
+        if (res.code == 200) {
+          localStorage.setItem('token', res.data.token)
+          this.router.navigate(['/user']);
+          this.loading = false
+        } else {
+          this.error = true
+          this.loading = false
+          form.resetForm()
+        }
+      }
+    )
+
+
+
 
 
   }

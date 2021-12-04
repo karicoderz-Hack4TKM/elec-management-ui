@@ -21,6 +21,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SubstationComponent } from './substation/substation.component';
 import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
 import { UserHomeComponent } from './user/user-home/user-home.component';
+import { ProviderLoginComponent } from './auth/provider-login/provider-login.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { UserHomeComponent } from './user/user-home/user-home.component';
     SubstationComponent,
     UserNavbarComponent,
     UserHomeComponent,
+    ProviderLoginComponent,
   ],
   imports: [
     BrowserModule,

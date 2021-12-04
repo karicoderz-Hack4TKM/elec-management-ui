@@ -6,6 +6,7 @@ import { AdminNotificationComponent } from './admin/main/admin-notification/admi
 import { AdminSlabsComponent } from './admin/main/admin-slabs/admin-slabs.component';
 import { AdminSubstationComponent } from './admin/main/admin-substation/admin-substation.component';
 import { LoginComponent } from './auth/login/login.component';
+import { ProviderLoginComponent } from './auth/provider-login/provider-login.component';
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 import { UserHomeComponent } from './user/user-home/user-home.component';
 import { UserComponent } from './user/user.component';
@@ -42,6 +43,9 @@ const routes: Routes = [
   //authorization routes
   {
     path:'',component:LoginComponent
+  },
+  {
+    path:'provider/login',component:ProviderLoginComponent
   },
   
   //page not found

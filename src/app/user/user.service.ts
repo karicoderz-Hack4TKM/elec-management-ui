@@ -9,6 +9,6 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
   loadGraphData(){
-    return this.http.get<any>('http://localhost:5000/core/consumption')
+    return this.http.get<any>('http://localhost:5000/core/tariff')
   }
 }
