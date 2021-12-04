@@ -11,6 +11,8 @@ import { AdminToolbarComponent } from './admin/partials/admin-toolbar/admin-tool
 import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
 import { FormsModule } from '@angular/forms';
+import { AdminHomeComponent } from './admin/main/admin-home/admin-home.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { FormsModule } from '@angular/forms';
     AdminToolbarComponent,
     AdminLoginComponent,
     UserLoginComponent,
+    AdminHomeComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
