@@ -42,8 +42,12 @@
                                     <span class="spinner-border spinner-border-sm" role="status" *ngIf="loading"></span>
                                 </button>
                             </div>
-
+                            
                         </form>
+                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert" *ngIf="error">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            Wrong Email or Password
+                        </div>
                     </div> <!-- end card-body -->
                 </div>
                 <!-- end card -->
