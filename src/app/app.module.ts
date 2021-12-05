@@ -32,6 +32,7 @@ import { SubstationUsersComponent } from './substation/substation-users/substati
 import { UserToolbarComponent } from './user/user-toolbar/user-toolbar.component';
 import { UserEvRequestComponent } from './user/user-ev-request/user-ev-request.component';
 import { SubstationHomeComponent } from './substation/substation-home/substation-home.component';
+import { UserBillComponent } from './user/user-bill/user-bill.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { SubstationHomeComponent } from './substation/substation-home/substation
     UserToolbarComponent,
     UserEvRequestComponent,
     SubstationHomeComponent,
+    UserBillComponent,
   ],
   imports: [
     BrowserModule,

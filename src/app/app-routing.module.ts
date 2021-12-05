@@ -14,6 +14,7 @@ import { SubstationHomeComponent } from './substation/substation-home/substation
 import { SubstationUsageChartComponent } from './substation/substation-usage-chart/substation-usage-chart.component';
 import { SubstationUsersComponent } from './substation/substation-users/substation-users.component';
 import { SubstationComponent } from './substation/substation.component';
+import { UserBillComponent } from './user/user-bill/user-bill.component';
 import { UserEvRequestComponent } from './user/user-ev-request/user-ev-request.component';
 import { UserHomeComponent } from './user/user-home/user-home.component';
 import { UserRequestFormComponent } from './user/user-request-form/user-request-form.component';
@@ -47,6 +48,9 @@ const routes: Routes = [
       },
       {
         path:'request',component:UserRequestFormComponent
+      },
+      {
+        path:'bill',component:UserBillComponent
       },
       {
         path:'ev-request',component:UserEvRequestComponent
