@@ -10,6 +10,7 @@ import { ProviderLoginComponent } from './auth/provider-login/provider-login.com
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 import { SubstationDeficitComponent } from './substation/substation-deficit/substation-deficit.component';
 import { SubstationGeneratorComponent } from './substation/substation-generator/substation-generator.component';
+import { SubstationHomeComponent } from './substation/substation-home/substation-home.component';
 import { SubstationUsageChartComponent } from './substation/substation-usage-chart/substation-usage-chart.component';
 import { SubstationUsersComponent } from './substation/substation-users/substation-users.component';
 import { SubstationComponent } from './substation/substation.component';
@@ -55,6 +56,9 @@ const routes: Routes = [
   {
     path:'substation',component:SubstationComponent,
     children:[
+      {
+        path:'',component:SubstationHomeComponent
+      },
       {
         path:'generator',component:SubstationGeneratorComponent
       },

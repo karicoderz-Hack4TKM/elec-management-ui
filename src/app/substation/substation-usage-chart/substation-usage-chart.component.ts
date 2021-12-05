@@ -32,7 +32,7 @@ export class SubstationUsageChartComponent implements OnInit {
         console.log(res)
         res.data.forEach((element:any) => {
             data.push(element.consumption)
-            labels.push(unix(element.time).format('hh:MM'))
+            labels.push(unix(element.time).format('hh:MM a'))
         });
         this.loadChart(data,labels)
       }
