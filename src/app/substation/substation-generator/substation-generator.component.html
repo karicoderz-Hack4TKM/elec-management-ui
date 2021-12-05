@@ -44,4 +44,12 @@
     <div class="text-center">
         <a href="/substation/deficit" class="btn btn-info btn-lg" *ngIf="start2 || start1 ">Confirm</a>
     </div>
+    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert" *ngIf="successStart1">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        Generator one Started
+    </div>
+    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert" *ngIf="successStart2">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        Generator Two Started
+    </div>
 </div>
