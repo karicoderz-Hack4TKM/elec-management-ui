@@ -30,6 +30,7 @@ import { SubstationUsageChartComponent } from './substation/substation-usage-cha
 import { SubstationDeficitComponent } from './substation/substation-deficit/substation-deficit.component';
 import { SubstationUsersComponent } from './substation/substation-users/substation-users.component';
 import { UserToolbarComponent } from './user/user-toolbar/user-toolbar.component';
+import { UserEvRequestComponent } from './user/user-ev-request/user-ev-request.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { UserToolbarComponent } from './user/user-toolbar/user-toolbar.component
     SubstationDeficitComponent,
     SubstationUsersComponent,
     UserToolbarComponent,
+    UserEvRequestComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,4 +16,8 @@ export class UserService {
   requestCreate(data:object){
     return this.http.post<any>(environment.API+'core/excess',data)
   }
+
+  createEvRequest(data:any){
+    return this.http.post<any>(environment.API+'core/electricvehicle',data)
+  }
 }
