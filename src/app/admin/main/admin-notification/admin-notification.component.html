@@ -14,26 +14,31 @@
                 Send Notification 
             </div>
 
-            <form class="ps-2 pe-2" >
+            <form class="ps-2 pe-2" #notification="ngForm" (ngSubmit)="sendnoti(notification)">
 
                 <div class="mb-2">
                     <label for="subject" class="form-label">Subject</label>
-                    <input class="form-control" type="text" id="subject" required="" placeholder="Subject">
+                    <input class="form-control" type="text" id="subject" required="" placeholder="Subject"name="subject" #subject="ngModel" ngModel>
                 </div>
 
                 <div class="mb-2">
                     <label for="content" class="form-label">Message</label>
-                    <textarea class="form-control" type="text" id="content" required="" rows="8">
+                    <textarea class="form-control" type="text" id="content" required="" rows="8"name="message" #message="ngModel" ngModel>
                         </textarea>
                 </div>
 
                 
 
                 <div class="mb-2 text-center">
-                    <button class="btn btn-primary" type="submit"><i class="fa fa-envelope"></i> Send</button>
+                        <span class="spinner-border spinner-border-sm" role="status" *ngIf="loading"></span>
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-envelope"></i> Send</button>
                 </div>
 
             </form>
+            <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show mt-3" role="alert" *ngIf="success">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                Message has been send to all substations 
+            </div>
         </div>
     </div>
 </div>
