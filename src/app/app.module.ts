@@ -25,6 +25,8 @@ import { ProviderLoginComponent } from './auth/provider-login/provider-login.com
 import { UserRequestFormComponent } from './user/user-request-form/user-request-form.component';
 import { SubstationNavbarComponent } from './substation/substation-navbar/substation-navbar.component';
 import { SubstationToolbarComponent } from './substation/substation-toolbar/substation-toolbar.component';
+import { SubstationGeneratorComponent } from './substation/substation-generator/substation-generator.component';
+import { SubstationUsageChartComponent } from './substation/substation-usage-chart/substation-usage-chart.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { SubstationToolbarComponent } from './substation/substation-toolbar/subs
     UserRequestFormComponent,
     SubstationNavbarComponent,
     SubstationToolbarComponent,
+    SubstationGeneratorComponent,
+    SubstationUsageChartComponent,
   ],
   imports: [
     BrowserModule,

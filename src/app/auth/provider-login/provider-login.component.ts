@@ -25,8 +25,14 @@ export class ProviderLoginComponent implements OnInit {
     this.authService.getProvider(data).subscribe(
       res => {
         if (res.code == 200) {
-          localStorage.setItem('token', res.data.token)
-          this.router.navigate(['/user']);
+          console.log(res)
+          localStorage.setItem('token', res.token)
+          localStorage.setItem('data', res.data)  
+          if(res.data.usertype == "admin"){
+            this.router.navigate(['/admin'])
+          }else{
+            this.router.navigate(['/substation'])
+          }
           this.loading = false
         } else {
           this.error = true
