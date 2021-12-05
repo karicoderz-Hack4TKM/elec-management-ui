@@ -27,6 +27,8 @@ import { SubstationNavbarComponent } from './substation/substation-navbar/substa
 import { SubstationToolbarComponent } from './substation/substation-toolbar/substation-toolbar.component';
 import { SubstationGeneratorComponent } from './substation/substation-generator/substation-generator.component';
 import { SubstationUsageChartComponent } from './substation/substation-usage-chart/substation-usage-chart.component';
+import { SubstationDeficitComponent } from './substation/substation-deficit/substation-deficit.component';
+import { SubstationUsersComponent } from './substation/substation-users/substation-users.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { SubstationUsageChartComponent } from './substation/substation-usage-cha
     SubstationToolbarComponent,
     SubstationGeneratorComponent,
     SubstationUsageChartComponent,
+    SubstationDeficitComponent,
+    SubstationUsersComponent,
   ],
   imports: [
     BrowserModule,

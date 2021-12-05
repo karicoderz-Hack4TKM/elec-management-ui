@@ -8,7 +8,9 @@ import { AdminSubstationComponent } from './admin/main/admin-substation/admin-su
 import { LoginComponent } from './auth/login/login.component';
 import { ProviderLoginComponent } from './auth/provider-login/provider-login.component';
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
+import { SubstationDeficitComponent } from './substation/substation-deficit/substation-deficit.component';
 import { SubstationGeneratorComponent } from './substation/substation-generator/substation-generator.component';
+import { SubstationUsersComponent } from './substation/substation-users/substation-users.component';
 import { SubstationComponent } from './substation/substation.component';
 import { UserHomeComponent } from './user/user-home/user-home.component';
 import { UserRequestFormComponent } from './user/user-request-form/user-request-form.component';
@@ -50,6 +52,12 @@ const routes: Routes = [
     children:[
       {
         path:'generator',component:SubstationGeneratorComponent
+      },
+      {
+        path:'deficit',component:SubstationDeficitComponent
+      },
+      {
+        path:'users',component:SubstationUsersComponent
       }
     ]
   },
