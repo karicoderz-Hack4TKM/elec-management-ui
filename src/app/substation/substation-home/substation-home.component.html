@@ -1,23 +1,15 @@
 <div class="row mt-4">
 
-    <div class="col-lg-6">
+    <div class="col-md-4" *ngFor="let item of data">
         <div class="card ">
             <div class="card-body">
                 
-                <h5 class="text-muted fw-normal mt-0" title="Number of Customers">Average Consumption</h5>
-                <h3 class="mt-3 mb-3">{{avgConsumption}}</h3>
+                <h3 class="fw-normal mt-0" title="Number of Customers">{{ item._id | titlecase}}</h3>
+                <h5 class="mt-2 mb-2"> No of Users : {{ item.count }}</h5>
+                <h5 class="mt-2 mb-2"> Average Consumption : {{ item.average | number}}</h5>
                 
             </div> 
         </div> 
     </div> 
-    <div class="col-lg-6">
-        <div class="card ">
-            <div class="card-body">
-                
-                <h5 class="text-muted fw-normal mt-0" title="Number of Customers">No of House Holds</h5>
-                <h3 class="mt-3 mb-3">{{houseHoldsCount}}</h3>
-                
-            </div> 
-        </div> 
-    </div> 
+    
 </div>

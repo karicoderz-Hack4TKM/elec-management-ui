@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 export class SubstationHomeComponent implements OnInit {
   avgConsumption = 0;
   houseHoldsCount = 0;
+  data:any = []
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
@@ -17,9 +18,9 @@ export class SubstationHomeComponent implements OnInit {
   }
 
   loadData(){
-    this.http.get<any>(environment.API+'core/').subscribe(
+    this.http.get<any>(environment.API+'core/allview').subscribe(
       res => {
-        console.log(res)
+        this.data = res
       }
     )
   }
