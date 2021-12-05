@@ -1,1 +1,47 @@
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+             
+            <h4 class="page-title">Generators</h4>
+        </div>
+    </div>
+</div>
+<div class="row">
+    
+    <div class="col-md-6">
+        <div class="card">
+            <h6 class="card-header">Generator 1</h6>
+            <div class="card-body">
+                
+                <p class="card-text">Total Generating Capacity : {{ gen1.maxicap}} kWh.</p>
+                <p class="card-text" *ngIf="start1">Start Time: {{gen1StartTime}}.</p>
+                <p class="card-text" *ngIf="start1">Estimated End Time: {{gen1estTime}}.</p>
+                <p class="card-text" *ngIf="start1">Time Remainig : {{h1}}:{{m1}}:{{s1}}.</p>
 
+                <a href="javascript: void(0);" class="btn btn-success" (click)="gen1Start()" *ngIf="!start1">Start</a>
+                <a href="javascript: void(0);" class="btn btn-danger" (click)="gen1Start()" *ngIf="start1">Stop</a>
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div> 
+    <div class="col-md-6">
+        <div class="card">
+            <h6 class="card-header">Generator 2</h6>
+            <div class="card-body">
+
+                <p class="card-text">Total Generating Capacity : {{ gen2.maxicap}} kWh.</p>
+                <p class="card-text" *ngIf="start2">Start Time: {{gen2StartTime}}.</p>
+                <p class="card-text" *ngIf="start2">Estimated End Time: {{gen1estTime}}.</p>
+                <p class="card-text" *ngIf="start2">Time Remainig : {{h2}}:{{m2}}:{{s2}}.</p>
+
+                <a href="javascript: void(0);" class="btn btn-success" (click)="gen2Start()" *ngIf="!start2">Start</a>
+                <a href="javascript: void(0);" class="btn btn-danger" (click)="gen2Start()" *ngIf="start2">Stop</a>
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div> 
+</div>
+
+<div class="row mt-3">
+    <div class="text-center">
+        <a href="/substation/deficit" class="btn btn-info btn-lg" *ngIf="start2 && start1 ">Confirm</a>
+    </div>
+</div>
