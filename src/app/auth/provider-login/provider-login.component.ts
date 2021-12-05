@@ -22,7 +22,7 @@ export class ProviderLoginComponent implements OnInit {
       password: form.value.password.trim()
     }
 
-    this.authService.getUser(data).subscribe(
+    this.authService.getProvider(data).subscribe(
       res => {
         if (res.code == 200) {
           localStorage.setItem('token', res.data.token)

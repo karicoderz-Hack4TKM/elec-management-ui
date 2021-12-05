@@ -13,4 +13,7 @@ export class AuthService {
   getUser(data:object){
     return this.http.post<any>(environment.API+'userLogin',data)
   }
+  getProvider(data:object){
+    return this.http.post<any>(environment.API+'core/providers',data)
+  }
 }

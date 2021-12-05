@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import * as moment from 'moment';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-request-form',
@@ -8,8 +9,8 @@ import * as moment from 'moment';
   styleUrls: ['./user-request-form.component.css']
 })
 export class UserRequestFormComponent implements OnInit {
-
-  constructor() { }
+  success = false
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
   }
@@ -27,9 +28,16 @@ export class UserRequestFormComponent implements OnInit {
       type:form.value.type,
       reason:form.value.reason.trim(),
       status:true,
-      startDate:moment(dateFormating(form.value.startDate) + ' ' + form.value.startTime, 'DD/MM/YYYY HH:mm').toISOString(),
-      endDate:moment(dateFormating(form.value.endDate) + ' ' + form.value.endTime, 'DD/MM/YYYY HH:mm').toISOString(),
+      userid:"HD01",
+      start_date:dateFormating(form.value.startDate),
+      end_date:dateFormating(form.value.endDate),
     }
     console.log(data)
+    this.userService.requestCreate(data).subscribe(
+      res => {
+        this.success = true
+        form.resetForm()
+      },
+    )
   }
 }

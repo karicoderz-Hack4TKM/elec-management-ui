@@ -23,6 +23,8 @@ import { UserNavbarComponent } from './user/user-navbar/user-navbar.component';
 import { UserHomeComponent } from './user/user-home/user-home.component';
 import { ProviderLoginComponent } from './auth/provider-login/provider-login.component';
 import { UserRequestFormComponent } from './user/user-request-form/user-request-form.component';
+import { SubstationNavbarComponent } from './substation/substation-navbar/substation-navbar.component';
+import { SubstationToolbarComponent } from './substation/substation-toolbar/substation-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { UserRequestFormComponent } from './user/user-request-form/user-request-
     UserHomeComponent,
     ProviderLoginComponent,
     UserRequestFormComponent,
+    SubstationNavbarComponent,
+    SubstationToolbarComponent,
   ],
   imports: [
     BrowserModule,

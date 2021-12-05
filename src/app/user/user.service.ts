@@ -12,4 +12,8 @@ export class UserService {
   loadGraphData(){
     return this.http.get<any>(environment.API+'core/consumption?filter={"userid":"'+this.user+'"}')
   }
+
+  requestCreate(data:object){
+    return this.http.post<any>(environment.API+'core/excess',data)
+  }
 }
