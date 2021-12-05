@@ -1,11 +1,7 @@
 <div class="navbar-custom topnav-navbar">
     <div class="container-fluid">
         <ul class="list-unstyled topbar-menu float-end mb-0">
-            <li class="notification-list mt-2">
-                <a class="nav-link" routerLink="/user/request">
-                    <button class="btn btn-info rounded-pill"><i class="fa fa-file-text mx-1"></i> Request</button>
-                </a>
-            </li>
+           
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" id="topbar-userdrop" href="#" role="button" aria-haspopup="true"
                     aria-expanded="false">
@@ -36,7 +32,7 @@
                     </a>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="javascript:void(0);" (click)="logout()" class="dropdown-item notify-item">
                         <i class="mdi mdi-logout me-1"></i>
                         <span>Logout</span>
                     </a>
