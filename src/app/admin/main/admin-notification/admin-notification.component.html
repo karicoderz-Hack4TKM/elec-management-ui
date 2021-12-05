@@ -30,8 +30,11 @@
                 
 
                 <div class="mb-2 text-center">
-                        <span class="spinner-border spinner-border-sm" role="status" *ngIf="loading"></span>
-                        <button class="btn btn-primary" type="submit"><i class="fa fa-envelope"></i> Send</button>
+                        
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fa fa-envelope"></i> Send
+                            <span class="spinner-border spinner-border-sm" role="status" *ngIf="loading"></span>
+                             </button>
                 </div>
 
             </form>

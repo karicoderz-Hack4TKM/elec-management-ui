@@ -23,7 +23,7 @@ export class AdminNotificationComponent implements OnInit {
     }
     this.http.post<any>(environment.API+'core/send',data).subscribe(
       res =>{
-        console.log(res)
+        form.resetForm()
         this.loading = false
         this.success = true;
         setTimeout(() => {
