@@ -1,15 +1,29 @@
 <div class="row mt-4">
+    <div class="col-md-8">
+        <div class="row">
 
-    <div class="col-md-4" *ngFor="let item of data">
-        <div class="card ">
-            <div class="card-body">
-                
-                <h3 class="fw-normal mt-0" title="Number of Customers">{{ item._id | titlecase}}</h3>
-                <h5 class="mt-2 mb-2"> No of Users : {{ item.count }}</h5>
-                <h5 class="mt-2 mb-2"> Average Consumption : {{ item.average | number}}</h5>
-                
+            <div class="col-md-4" *ngFor="let item of data">
+                <div class="card " style="height: 180px;">
+                    <div class="card-body"> 
+                        <h3 class="fw-normal mt-0" title="Number of Customers">{{ item._id | titlecase}}</h3>
+                        <h5 class="mt-2 mb-2"> No of Users : {{ item.count }}</h5>
+                        <h5 class="mt-2 mb-2"> Average Consumption : {{ item.average | number}}</h5>
+                        
+                    </div> 
+                </div> 
             </div> 
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="height: 490px;">
+            <div class="card-body">
+                <div class=" h4 text-center">Graphical Representation of Average Power Consumption</div>
+                <div style="width:100%;">
+                    <canvas id="myChart1" width="700" height="250" #mychart1></canvas>
+                </div>
+            </div>
         </div> 
-    </div> 
+    </div>
+    
     
 </div>

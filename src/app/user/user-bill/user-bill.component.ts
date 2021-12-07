@@ -15,7 +15,7 @@ export class UserBillComponent implements OnInit {
   today:any
   user:any;
   slab:any ;
-  price:any = 1
+  price:any;
   constructor(private http:HttpClient) {
     this.today = new Date().toISOString();
     let localuser = localStorage.getItem('user') as string
@@ -32,8 +32,7 @@ export class UserBillComponent implements OnInit {
     this.http.get<any>(environment.API+'/core/tariff?filter={"type":"'+this.user.usertype.toLowerCase()+'"}').subscribe(
       res => {
         console.log(res.data)
-        this.slab = res.data[0]
-        this.price = res.data[0].length > 0 ? res.data[0].price : 1.5
+        this.price = res.data.length > 0 ? res.data[0].price : 1.5
       }
     )
   }
@@ -44,7 +43,7 @@ export class UserBillComponent implements OnInit {
     this.http.get<any>(environment.API+'core/bill?filter={"userid":"'+this.user._id+'"}').subscribe(
       res => {
         this.loading = false
-        this.tariff = this.slab.price * res.data
+        this.tariff = this.price * res.data
         this.unit = res.data
       }
     )
