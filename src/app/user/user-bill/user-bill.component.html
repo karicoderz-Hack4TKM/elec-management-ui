@@ -5,42 +5,88 @@
         </div>
     </div>
 </div>
+<div class="row " *ngIf="tariff != 0">
+    
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
 
-<div class="card">
-    <div class="card-body">
-        <form #search="ngForm" (ngSubmit)="loadUserBill(search)">
-            <div class="row">
-                <div class="col-md-10">
-                    <div class="mb-3">
-                        <label for="example-palaceholder" class="form-label">Enter Id</label>
-                        <input type="text" id="example-palaceholder" class="form-control" required name="userid"
-                            #userid="ngModel" ngModel placeholder="Enter your user Id">
+                <!-- Invoice Detail-->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="float-end mt-22">
+                            <p><b>Hello, {{ user.name }} </b></p>
+
+                        </div>
+
+                    </div><!-- end col -->
+                    <div class="col-sm-4 offset-sm-2">
+                        <div class="mt-3 float-sm-end">
+                            <p class="font-13"><strong>Consumption Date: </strong> &nbsp;&nbsp;&nbsp; 1/11/2021 -
+                                30/11/2021</p>  
+                            <p class="font-13"><strong>Bill Generate Date </strong> &nbsp;&nbsp;&nbsp; {{ today | date:'dd:MM:yyyy' }}</p>
+                            <p class="font-13"><strong>User ID: </strong> <span class="float-end"> {{ user._id}}</span>
+                            </p>
+                        </div>
+                    </div><!-- end col -->
+                </div>
+                <!-- end row -->
+
+                <div class="row ">
+                    <div class="col-sm-4">
+                        <h6>Details</h6>
+                        <address>
+                            {{user.name }}<br>
+                            Lane no : {{ user.lanenumber}}<br>
+                            {{ user.email }}<br>
+                            Connection type: {{ user.usertype}}
+                        </address>
+                    </div> <!-- end col-->
+
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table ">
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Total Consumption</th>
+                                        <th>Unit Cost</th>
+                                        <th class="text-end">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <b>Regular Consumption</b> <br />
+
+                                        </td>
+                                        <td> {{ unit | number}} </td>
+                                        <td><i class="fa fa-inr"></i> {{ this.slab.price }}</td>
+                                        <td class="text-end"><i class="fa fa-inr"></i> {{ tariff | number}}</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div> <!-- end table-responsive-->
+                    </div> <!-- end col -->
+                </div>
+                
+
+                <div class="d-print-none ">
+                    <div class="text-end">
+                        <a href="javascript:window.print()" class="btn btn-primary mx-1"  ><i class="fa fa-print"></i>
+                            Print</a>
+                        <a href="javascript: void(0);" class="btn btn-info"><i class="fa fa-money"></i> Pay</a>
                     </div>
                 </div>
-                <div class="col-md-2 mt-3">
-                    <button class="btn btn-primary" type="submit" [disabled]="!search.valid">Search
-                        <span class="spinner-border spinner-border-sm" role="status" *ngIf="loading"></span>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="row " *ngIf="tariff != 0">
-    <div class="col-md-6 m-auto">
+                <!-- end buttons -->
 
-        <div class="card ">
-            <div class="card-body">
-                <h5 class="text-muted fw-normal mt-0" title="Number of Customers">Bill Amount</h5>
-                <h3 class="mt-3 mb-3">Total Amount : <i class="fa fa-inr"></i>{{ tariff | number}}</h3>
-                <h3 class="mt-3 mb-3">Total unit Consumed : {{ unit | number}}</h3>
-                <div class="text-center">
-                    <button class="btn btn-primary" type="submit">
-                        <i class="fa fa-money"></i> PAY
-                    </button>
-                </div>
             </div> <!-- end card-body-->
-        </div> <!-- end card-->
-    </div>
+        </div> <!-- end card -->
+    </div> <!-- end col-->
 </div>
-

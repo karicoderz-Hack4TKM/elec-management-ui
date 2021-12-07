@@ -19,11 +19,13 @@ import { UserEvRequestComponent } from './user/user-ev-request/user-ev-request.c
 import { UserHomeComponent } from './user/user-home/user-home.component';
 import { UserRequestFormComponent } from './user/user-request-form/user-request-form.component';
 import { UserComponent } from './user/user.component';
+import { AdminAuthGuard } from './utilities/guard/admin-auth.guard';
+import { UserAuthGuard } from './utilities/guard/user-auth.guard';
 
 const routes: Routes = [
   //admin routes 
   {
-    path:'admin',component:AdminComponent,
+    path:'admin',component:AdminComponent,canActivate:[AdminAuthGuard],
     children:[
      {
        path:'',component:AdminSlabsComponent
@@ -38,7 +40,7 @@ const routes: Routes = [
   },
   //user routes
   {
-    path:'user',component:UserComponent,
+    path:'user',component:UserComponent,canActivate:[UserAuthGuard],
     children:[
       {
         path:'',component:UserHomeComponent
@@ -55,7 +57,7 @@ const routes: Routes = [
     ]
   },
   {
-    path:'substation',component:SubstationComponent,
+    path:'substation',component:SubstationComponent,canActivate:[AdminAuthGuard],
     children:[
       {
         path:'',component:SubstationHomeComponent

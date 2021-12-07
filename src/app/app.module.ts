@@ -33,6 +33,8 @@ import { UserToolbarComponent } from './user/user-toolbar/user-toolbar.component
 import { UserEvRequestComponent } from './user/user-ev-request/user-ev-request.component';
 import { SubstationHomeComponent } from './substation/substation-home/substation-home.component';
 import { UserBillComponent } from './user/user-bill/user-bill.component';
+import { AdminAuthGuard } from './utilities/guard/admin-auth.guard';
+import { UserAuthGuard } from './utilities/guard/user-auth.guard';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,7 @@ import { UserBillComponent } from './user/user-bill/user-bill.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [
+  providers: [AdminAuthGuard,UserAuthGuard,
     {
       provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true
     }

@@ -12,23 +12,44 @@ export class UserBillComponent implements OnInit {
   loading = false
   tariff:any = 0
   unit:any;
-  constructor(private http:HttpClient) { }
+  today:any
+  user:any;
+  slab:any ;
+  price:any = 1
+  constructor(private http:HttpClient) {
+    this.today = new Date().toISOString();
+    let localuser = localStorage.getItem('user') as string
+    this.user = JSON.parse(localuser)  
+    this.loadSlab();
+   }
 
   ngOnInit(): void {
+    
+    
+
   }
 
-  loadUserBill(form:NgForm){
-    this.loading = true
-    this.http.get<any>(environment.API+'core/bill?filter={"userid":"'+form.value.userid.trim()+'"}').subscribe(
+  loadSlab(){
+    this.http.get<any>(environment.API+'/core/tariff?filter={"type":"'+this.user.usertype.toLowerCase()+'"}').subscribe(
       res => {
-        this.loading = false
-        this.tariff = 1.2 * res.data
-        this.unit = res.data
+        console.log(res.data)
+        this.slab = res.data[0]
+        this.price = res.data[0].length > 0 ? res.data[0].price : 1.5
+        this.loadUserBill()
       }
     )
   }
-  loadBill(){
-    this.http.get<any>(environment.API+'core/bill')
+
+
+  loadUserBill(){
+    this.loading = true
+    this.http.get<any>(environment.API+'core/bill?filter={"userid":"'+this.user._id+'"}').subscribe(
+      res => {
+        this.loading = false
+        this.tariff = this.slab.price * res.data
+        this.unit = res.data
+      }
+    )
   }
 
 }
