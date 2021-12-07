@@ -20,13 +20,12 @@ export class UserBillComponent implements OnInit {
     this.today = new Date().toISOString();
     let localuser = localStorage.getItem('user') as string
     this.user = JSON.parse(localuser)  
-    this.loadSlab();
+    
    }
 
   ngOnInit(): void {
-    
-    
-
+    this.loadSlab();
+    this.loadUserBill()
   }
 
   loadSlab(){
@@ -35,7 +34,6 @@ export class UserBillComponent implements OnInit {
         console.log(res.data)
         this.slab = res.data[0]
         this.price = res.data[0].length > 0 ? res.data[0].price : 1.5
-        this.loadUserBill()
       }
     )
   }
