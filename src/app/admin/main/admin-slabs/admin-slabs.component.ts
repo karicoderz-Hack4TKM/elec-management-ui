@@ -36,8 +36,12 @@ export class AdminSlabsComponent implements OnInit {
     this.adminService.createTariff(data).subscribe(
       res => {
         this.loadTariff()
+        form.resetForm()
         this.success = true;
         this.message = 'Tariff added successfully'
+        setTimeout(() => {
+          this.success = false
+        }, 3000);
       }
     )
   }

@@ -19,7 +19,7 @@
                 <p class="card-text" *ngIf="start1">Time Remainig : {{h1}}:{{m1}}:{{s1}}.</p>
 
                 <a href="javascript: void(0);" class="btn btn-success" (click)="gen1Start()" *ngIf="!start1">Start</a>
-                <a href="javascript: void(0);" class="btn btn-danger" (click)="gen1Start()" *ngIf="start1">Stop</a>
+                <a href="javascript: void(0);" class="btn btn-danger" (click)="stopGen1()" *ngIf="start1">Stop</a>
             </div> <!-- end card-body-->
         </div> <!-- end card-->
     </div> 
@@ -34,7 +34,7 @@
                 <p class="card-text" *ngIf="start2">Time Remainig : {{h2}}:{{m2}}:{{s2}}.</p>
 
                 <a href="javascript: void(0);" class="btn btn-success" (click)="gen2Start()" *ngIf="!start2">Start</a>
-                <a href="javascript: void(0);" class="btn btn-danger" (click)="gen2Start()" *ngIf="start2">Stop</a>
+                <a href="javascript: void(0);" class="btn btn-danger" (click)="stopGen2()" *ngIf="start2">Stop</a>
             </div> <!-- end card-body-->
         </div> <!-- end card-->
     </div> 
@@ -48,8 +48,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         Generator one Started
     </div>
+    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert" *ngIf="successStop1">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        Generator one Stopped
+    </div>
     <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert" *ngIf="successStart2">
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         Generator Two Started
+    </div>
+    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert" *ngIf="successStop2">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        Generator Two Stopped
     </div>
 </div>

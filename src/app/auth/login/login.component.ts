@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
       res => {
         if (res.code == 200) {
           localStorage.setItem('token', res.token)
+          localStorage.setItem('user',JSON.stringify(res.data))
           this.router.navigate(['/user']);
           this.loading = false
         } else {

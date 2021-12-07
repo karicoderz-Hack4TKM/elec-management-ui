@@ -27,7 +27,7 @@ export class ProviderLoginComponent implements OnInit {
         if (res.code == 200) {
           console.log(res)
           localStorage.setItem('token', res.token)
-          localStorage.setItem('data', res.data)  
+          localStorage.setItem('data', JSON.stringify(res.data))  
           if(res.data.usertype == "admin"){
             this.router.navigate(['/admin'])
           }else{

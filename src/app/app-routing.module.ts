@@ -25,11 +25,8 @@ const routes: Routes = [
   {
     path:'admin',component:AdminComponent,
     children:[
-      {
-        path:'',component:AdminHomeComponent
-      },
      {
-       path:'slabs',component:AdminSlabsComponent
+       path:'',component:AdminSlabsComponent
      },
      {
        path:'substation',component:AdminSubstationComponent
